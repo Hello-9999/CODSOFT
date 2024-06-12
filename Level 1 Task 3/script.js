@@ -9,6 +9,8 @@ Array.from(buttons).forEach((button) => {
     let operator = event.target.innerHTML;
 
     if (operator === "=") {
+      console.log(display.value, "rt");
+
       try {
         display.value = eval(num);
         num = display.value;
@@ -17,6 +19,9 @@ Array.from(buttons).forEach((button) => {
         display.value = "Error";
         num = "";
       }
+    } else if (operator === "C") {
+      display.value = "0";
+      num = "";
     } else {
       if (resultDisplayed) {
         num = "";
